@@ -2,7 +2,7 @@
 """
 Print Square module, for printing squares with "#"
 
-useful for all square-based applications
+useful for all square-based application
 """
 
 
