@@ -9,7 +9,7 @@ useful
 def text_indentation(text):
     """text must be a string, There should be no space
     at the beginning
-    or at the end of each printed line.
+    or at the end of each printed line
     """
     # text is a string, otherwise raise a TypeError
     if isinstance(text, str) is False:
