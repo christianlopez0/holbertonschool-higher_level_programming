@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Print Square module, for printing squares with "#".
+Print Square module, for printing squares with "#"
 
 useful for all square-based applications
 """
