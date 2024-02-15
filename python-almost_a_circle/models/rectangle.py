@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    Rectangle class
+    """
 from models.base import Base
 
 class Rectangle(Base):
@@ -56,8 +59,8 @@ class Rectangle(Base):
 
 if __name__ == "__main__":
     rect = Rectangle(10, 20, 5, 5, id=1)
-    print(rect.width)   # Output: 10
-    print(rect.height)  # Output: 20
-    print(rect.x)       # Output: 5
-    print(rect.y)       # Output: 5
-    print(rect.id)      # Output: 1
+    print(rect.width)   
+    print(rect.height)  
+    print(rect.x)       
+    print(rect.y)  
+    print(rect.id) 
