@@ -21,7 +21,7 @@ class Circle(Shape):
         return math.pi * self.radius ** 2
     
     def perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * math.pi * abs(self.radius)
 
 # Concrete class Rectangle inheriting from Shape
 class Rectangle(Shape):
@@ -41,7 +41,7 @@ def shape_info(shape):
     print("Perimeter:", shape.perimeter())
 
 # Testing
-circle = Circle(5)
+circle = Circle(-5)  # Negative radius for testing
 rectangle = Rectangle(4, 6)
 
 print("Circle:")
@@ -49,3 +49,4 @@ shape_info(circle)
 
 print("\nRectangle:")
 shape_info(rectangle)
+
