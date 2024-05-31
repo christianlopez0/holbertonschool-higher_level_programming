@@ -4,10 +4,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Dictionary to store user data
-users = {
-    "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
+users = {}
 
 @app.route("/")
 def home():
@@ -33,7 +30,9 @@ def get_user(username):
 def add_user():
     data = request.json
     username = data.get("username")
-    if username in users:
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    elif username in users:
         return jsonify({"error": "User already exists"}), 400
     else:
         users[username] = data
