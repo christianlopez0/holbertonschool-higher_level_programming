@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t docker.pkg.github.com/${{ github.repository }}/extended-hello-alpine:latest .
+
+    - name: Log into GitHub Container Registry
+      run: echo "${{ secrets.CR_PAT }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+
+    - name: Push image to GitHub Container Registry
+      run: docker push docker.pkg.github.com/${{ github.repository }}/extended-hello-alpine:latest
