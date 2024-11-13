@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# 101-locked_class.py
+# Christian Lopez <7332@holbertonschool.com>
 """Defines a locked class."""
 
 
